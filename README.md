@@ -22,7 +22,7 @@ This repository contains an implementation of the MeanShift algorithm for object
 
 ## Getting Started
 
-To run experiments:
+To run experiments (note that you have to change the hyperparameters by yourself, some experiments are already run and the results are stored in `experiments1_result` and `experiments2_result`):
 
 ```bash
 unzip resized_video.zip
