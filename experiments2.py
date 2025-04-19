@@ -55,7 +55,6 @@ plt.plot(sim1, label='Original Meanshift')
 plt.plot(sim2, label='KW Meanshift')
 
 
-# Add labels and legend
 plt.xlabel('Iteration')
 plt.ylabel('Accuracy')
 plt.title("Gamma: " + str(gamma) + " " + kernel_name + " " + "occlusion: " + str(occlusion) + " " +  video )

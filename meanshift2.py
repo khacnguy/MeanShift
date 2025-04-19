@@ -10,7 +10,6 @@ def meanShiftwindow(frame, track_window, q, weights, epsilon, max_iterations, wi
     i = 0
     d = np.inf
 
-    #create kernels
     half_width = w / window_size // 2
     half_height = h / window_size // 2
     Y, X = np.mgrid[-half_width:half_width+1, -half_height:half_height+1]
@@ -27,7 +26,6 @@ def meanShiftwindow(frame, track_window, q, weights, epsilon, max_iterations, wi
         y_change = np.sum(average_Y_mat) / np.sum(pool_roi) * window_size
         x += round(x_change)
         y += round(y_change)
-        #print(x,y, x_change, y_change, i, epsilon)
         i += 1
         if i >= 10:
             break
@@ -49,7 +47,6 @@ def meanShiftTracking2(cap, file_name, ROI, kernel, gamma, window_size, occlusio
     roi = frame[y:y+h, x:x+w]
 
     weights = kernel((h, w))
-    #hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     rgb_roi = frame[y:y+h, x:x+w]
     hsv_roi = cv2.cvtColor(rgb_roi, cv2.COLOR_BGR2HSV)
     q = normalize_histogram(extract_histogram(hsv_roi, 8, weights=weights))

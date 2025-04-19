@@ -63,7 +63,6 @@ plt.plot(sim2, label='Window Meanshift')
 plt.plot(sim3, label='Naive Window Meanshift')
 
 
-# Add labels and legend
 plt.xlabel('Iteration')
 plt.ylabel('Accuracy')
 plt.title("Gamma: " + str(gamma) + " " + kernel_name + " " + "window_size: " + str(window_size) + " " + "occlusion: " + str(occlusion) + " " +  video )

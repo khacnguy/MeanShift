@@ -10,7 +10,6 @@ def meanShiftBPW(frame, track_window, q, weights, epsilon, max_iterations):
     i = 0
     d = np.inf
 
-    #create kernels
     half_width = w // 2
     half_height = h // 2
     Y, X = np.mgrid[-half_width:half_width+1, -half_height:half_height+1]
@@ -28,7 +27,6 @@ def meanShiftBPW(frame, track_window, q, weights, epsilon, max_iterations):
         y_change = np.sum(average_Y_mat) / np.sum(weights_mat) 
         x += round(x_change)
         y += round(y_change)
-        #print(x,y, x_change, y_change, i, epsilon)
         i += 1
         if i >= 10:
             break
